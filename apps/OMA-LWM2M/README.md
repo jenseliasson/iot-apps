@@ -11,6 +11,18 @@ Testing:
  $ mvn install
  $ cd leshan-standalone
  $ mvn assembly:assembly -DdescriptorId=jar-with-dependencies
+3) Run the Mulle device  with the Resource Directory client and the correct IP address [fdfd::ff] when using the Mulle
+4) When the Mulle device has registered at the RD server, use a web browser to see all resources of the Mulle at: http://localhost:8080/#/clients
 
-3) Create a config for your server and devices
- $ <to be added>
+
+To work with the bootstrap funtionality (note that the bootstrap and main leshan servers canot run at the same time due to port collisions):
+1) Build the leshan bootstrap server
+ $ cd leshan-bs-server
+ $ mvn assembly:assembly -DdescriptorId=jar-with-dependencies
+ $ java -jar target/leshan-bs-server-0.1.11-SNAPSHOT-jar-with-dependencies.jar
+
+2) From another terminal, add a device, and change Mulle-202 to meet the name of your device and
+  create a config for your bootstrap server and devices
+ $ curl --data-binary @config.json http://localhost:8080/api/bootstrap/Mulle-202
+
+
