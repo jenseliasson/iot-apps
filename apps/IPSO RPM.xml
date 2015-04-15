@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M>
+    <Object ObjectType="MODefinition">
+        <Name>IPSO RPM</Name>
+        <Description1>This IPSO object can be used to represent measured RPM in Revolutions Per Minute.</Description1>
+        <ObjectID>33xx</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:ext:33xx</ObjectURN>
+        <MultipleInstances>Multiple</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="0">
+                <Name>Sensor Value</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>m</Units>
+                <Description>This resource type returns the RPM measured in Revolutions Per Minute.</Description>
+            </Item>
+            <Item ID="1">
+                <Name>Min Measured Value</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>%</Units>
+                <Description>The minimum value measured by the sensor since it is ON</Description>
+            </Item>
+            <Item ID="2">
+                <Name>Max Measured  Value</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>%</Units>
+                <Description>The maximum value measured by the sensor since it is ON</Description>
+            </Item>
+            <Item ID="3">
+                <Name>Min  Range  Value</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>%</Units>
+                <Description>The minimum value that can be measured by the sensor</Description>
+            </Item>
+            <Item ID="4">
+                <Name>Max Range Value</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Float</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>%</Units>
+                <Description>The maximum value that can be measured by the sensor</Description>            
+            </Item>
+        </Resources>
+        <Description2></Description2>
+    </Object>
+</LWM2M>
