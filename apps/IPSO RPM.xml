@@ -15,7 +15,7 @@
                 <Mandatory>Mandatory</Mandatory>
                 <Type>Float</Type>
                 <RangeEnumeration></RangeEnumeration>
-                <Units>m</Units>
+                <Units>r/m</Units>
                 <Description>This resource type returns the RPM measured in Revolutions Per Minute.</Description>
             </Item>
             <Item ID="1">
@@ -25,7 +25,7 @@
                 <Mandatory>Optional</Mandatory>
                 <Type>Float</Type>
                 <RangeEnumeration></RangeEnumeration>
-                <Units>%</Units>
+                <Units>r/m</Units>
                 <Description>The minimum value measured by the sensor since it is ON</Description>
             </Item>
             <Item ID="2">
@@ -35,17 +35,17 @@
                 <Mandatory>Optional</Mandatory>
                 <Type>Float</Type>
                 <RangeEnumeration></RangeEnumeration>
-                <Units>%</Units>
+                <Units>r/m</Units>
                 <Description>The maximum value measured by the sensor since it is ON</Description>
             </Item>
             <Item ID="3">
-                <Name>Min  Range  Value</Name>
+                <Name>Min Range Value</Name>
                 <Operations>R</Operations>
                 <MultipleInstances>Single</MultipleInstances>
                 <Mandatory>Optional</Mandatory>
                 <Type>Float</Type>
                 <RangeEnumeration></RangeEnumeration>
-                <Units>%</Units>
+                <Units>r/m</Units>
                 <Description>The minimum value that can be measured by the sensor</Description>
             </Item>
             <Item ID="4">
@@ -55,7 +55,7 @@
                 <Mandatory>Optional</Mandatory>
                 <Type>Float</Type>
                 <RangeEnumeration></RangeEnumeration>
-                <Units>%</Units>
+                <Units>r/m</Units>
                 <Description>The maximum value that can be measured by the sensor</Description>            
             </Item>
         </Resources>
