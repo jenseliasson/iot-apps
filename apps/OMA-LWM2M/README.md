@@ -17,7 +17,6 @@ Testing:
 
 To add LWM2M functionallity to you project (I have tested with the rpl-border-router and er-rest-example) in Contiki:
 1) Add the following include
-#include "oma_lwm2m.h"
 #include "resources/oma_lwm2m.h"
 
 2) in the main process, add this code
