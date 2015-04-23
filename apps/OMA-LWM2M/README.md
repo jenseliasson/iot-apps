@@ -29,16 +29,16 @@ To add LWM2M functionallity to you project (I have tested with the rpl-border-ro
   oma_lwm2m_init();
 #endif
 
-3) either copy the files from my repository to your Contiki tree, or use symblic links in Linux to add alla my files to your resorces/ folder. 
+3) either copy the files from my repository to your Contiki tree, or use symblic links in Linux to add all my files to your resorces/ folder. 
 This will be improved when my code is pushed to the standard Contiki reposity in apps/oma-lwm2m or similar.
 
-4) enable LWM2M to your build bu add ing the following code snippet to your project_conf.h
+4) enable LWM2M to your build by adding the following code snippet to your project_conf.h
 
 // enable OMA LwM2M framework
 #define WITH_OMA_LWM2M	1
 
 # Not currently working du to problem when the /bs server performs a DELETE to the "/" resource
-To work with the bootstrap functionality (note that the bootstrap and main leshan servers cannot run at the same time due to port collisions):
+To work with the bootstrap functionality (note that the bootstrap and main leshan servers cannot run at the same time on the same computer due to port collisions):
 1) Build the leshan bootstrap server
  $ cd leshan-bs-server
  $ mvn assembly:assembly -DdescriptorId=jar-with-dependencies
