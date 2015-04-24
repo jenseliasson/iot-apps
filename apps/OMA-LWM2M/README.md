@@ -14,6 +14,13 @@ Testing:
 3) Run the Mulle device  with the Resource Directory client and the correct IP address [fdfd::ff] when using the Mulle
 4) When the Mulle device has registered at the RD server, use a web browser to see all resources of the Mulle at: http://localhost:8080/#/clients
 
+To add the Resource Directory client: use this code:
+#include "rd_client.h"
+
+and add rd_client in the list of processes to automatically start.
+
+AUTOSTART_PROCESSES(&border_router_process,&webserver_nogui_process, &ntpd_process, &rd_client);
+
 
 To add LWM2M functionallity to you project (I have tested with the rpl-border-router and er-rest-example) in Contiki:
 1) Add the following include
