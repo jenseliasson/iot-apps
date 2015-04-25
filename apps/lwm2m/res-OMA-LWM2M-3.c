@@ -60,6 +60,7 @@ static void res_3_0_9_get_handler(void *request, void *response, uint8_t *buffer
 static void res_3_0_10_get_handler(void *request, void *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_3_0_11_get_handler(void *request, void *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_3_0_13_get_handler(void *request, void *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
+static void res_3_0_13_post_handler(void *request, void *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_3_0_14_get_handler(void *request, void *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 
 
@@ -386,7 +387,7 @@ RESOURCE(res_omalwm2m_3_13CurrentTime,
          "title=\"Current time:\";rt=\"\"",
          res_3_0_13_get_handler,
          NULL,
-         NULL,
+         res_3_0_13_post_handler,
          NULL);
 
 static void
@@ -427,6 +428,35 @@ res_3_0_13_get_handler(void *request, void *response, uint8_t *buffer, uint16_t 
 //  REST.set_header_content_type(response, REST.type.APPLICATION_JSON); //application/vnd.oma.lwm2m+tlv
   REST.set_header_etag(response, (uint8_t *)&length, 1);
   REST.set_response_payload(response, buffer, length);
+}
+
+
+static void
+res_3_0_13_post_handler(void *request, void *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
+{
+  int length; 
+
+char message[80]; 
+
+  uint16_t payload_len = 0, res;
+  uint8_t* payload = NULL;
+  unsigned long sec;
+
+  payload_len = REST.get_request_payload(request, &payload);
+  
+  if (payload) {
+    memcpy(message, payload, payload_len);
+    message[payload_len] = '\0';
+    printf(" payload: %s\n", message);
+    res = sscanf(message, "%lu", &sec); //XXX must validate this number, and return error code if wrong or clock could not be set
+    printf("ts=%lu\n", sec); // works!
+//    if (res == 1)
+//      clock_set_seconds(sec); XXX: hangs system?
+  }
+
+  REST.set_header_etag(response, (uint8_t *)&length, 1);
+  //REST.set_response_payload(response, buffer, length);
+  REST.set_response_status(response, REST.status.CHANGED);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
