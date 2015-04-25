@@ -1,0 +1,1 @@
+lwm2m_src = rd_client.c oma_lwm2m.c res-OMA-LWM2M-0.c res-OMA-LWM2M-3.c res-OMA-LWM2M-4.c res-OMA-LWM2M-5.c res-OMA-LWM2M-7.c
