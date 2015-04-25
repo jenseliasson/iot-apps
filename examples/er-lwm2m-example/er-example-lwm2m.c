@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, Institute for Pervasive Computing, ETH Zurich
+ * Copyright (c) 2015, Jens Eliasson
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -31,9 +31,9 @@
 
 /**
  * \file
- *      Erbium (Er) REST Engine example.
+ *      OMA LWM2M Engine example.
  * \author
- *      Matthias Kovatsch <kovatsch@inf.ethz.ch>
+ *      Jens Eliasson <jens.eliasson@ltu.se>
  */
 
 #include <stdio.h>
