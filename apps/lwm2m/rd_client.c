@@ -1,4 +1,7 @@
 /*
+ * Copyright (c) 2015, Jens Eliasson, Lulea University of Technology
+ * All rights reserved.
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
@@ -24,11 +27,11 @@
  * SUCH DAMAGE.
  *
  * This file is an extension of the Contiki operating system.
- *
  */
+
 /**
  * \file
- *         rd_client.c
+ *         Resource Directory client
  * \author
  *         Jens Eliasson <jens.eliasson@ltu.se>
  */

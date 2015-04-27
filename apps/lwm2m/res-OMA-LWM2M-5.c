@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Jens Eliasson
+ * Copyright (c) 2015, Jens Eliasson, Lulea University of Technology
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

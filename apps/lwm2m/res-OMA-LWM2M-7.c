@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015, Jens Eliasson
+ * Copyright (c) 2015, Jens Eliasson, Lulea University of Technology
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -31,7 +31,7 @@
 
 /**
  * \file
- *      OMA LWM2M 4
+ *      OMA LWM2M 7
  * \author
  *      Jens Eliasson <jens.eliasson@ltu.se>
  */
