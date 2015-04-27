@@ -10,3 +10,6 @@ TODO:
   - long-term stability tests
   - TLV, JSON, and XML support, including run-time coding and decoding
   - ...
+
+More information is available at: http://sm-pc777.sm.ltu.se/~jens/
+
