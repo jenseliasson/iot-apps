@@ -46,7 +46,6 @@
 static uint8_t error_code = 0;
 
 /* this set the current time zone */
-//#include "ntpd.h"
 static int tz = 1;
 
 static void res_3_0_0_get_handler(void *request, void *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
