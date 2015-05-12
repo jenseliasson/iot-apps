@@ -415,8 +415,7 @@ res_3_0_13_get_handler(void *request, void *response, uint8_t *buffer, uint16_t 
   int length; 
 
   memset(message, '\0', sizeof(message));
-  //sprintf(message, "%lu", getCurrTime());
-  sprintf(message, "%lu", 0);
+  sprintf(message, "%lu", clock_seconds());
 
   length = strlen(message);
   memcpy(buffer, message, length);
@@ -425,7 +424,6 @@ res_3_0_13_get_handler(void *request, void *response, uint8_t *buffer, uint16_t 
   REST.set_response_payload(response, buffer, length);
 #endif
 
-//  REST.set_header_content_type(response, REST.type.APPLICATION_JSON); //application/vnd.oma.lwm2m+tlv
   REST.set_header_etag(response, (uint8_t *)&length, 1);
   REST.set_response_payload(response, buffer, length);
 }
@@ -447,15 +445,14 @@ char message[80];
   if (payload) {
     memcpy(message, payload, payload_len);
     message[payload_len] = '\0';
-    printf(" payload: %s\n", message);
-    res = sscanf(message, "%lu", &sec); //XXX must validate this number, and return error code if wrong or clock could not be set
-    printf("ts=%lu\n", sec); // works!
-//    if (res == 1)
-//      clock_set_seconds(sec); XXX: hangs system?
+    //printf(" payload: %s\n", message);
+    res = sscanf(message, "%lu", &sec);
+    //printf("ts=%lu\n", sec);
+    if (res == 1)
+      clock_set_seconds(sec);
   }
 
   REST.set_header_etag(response, (uint8_t *)&length, 1);
-  //REST.set_response_payload(response, buffer, length);
   REST.set_response_status(response, REST.status.CHANGED);
 }
 
